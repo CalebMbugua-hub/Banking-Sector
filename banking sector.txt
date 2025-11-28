@@ -1,0 +1,29 @@
+import numpy as np
+
+# 1) Create a 2D array representing transaction volumes for 4 branches over 6 months.
+#    Each row = branch, each column = month.
+transactions = np.array([
+    [1200, 1350, 1100, 1400, 1500, 1600],  # Branch A
+    [900,  950,  980,  1020, 1100, 1200],  # Branch B
+    [2000, 2100, 2050, 2200, 2300, 2400],  # Branch C
+    [500,  480,  470,  520,  550,  600]    # Branch D
+])
+print("Transactions (4x6):\n", transactions)
+
+# 2) Total transactions per branch
+total_per_branch = transactions.sum(axis=1)
+print("\nTotal transactions per branch:", total_per_branch)
+
+# 3) Branch with the highest total transactions
+idx_max = np.argmax(total_per_branch)            # index of branch with max total
+branch_names = ["Branch A", "Branch B", "Branch C", "Branch D"]
+branch_with_max = branch_names[idx_max]
+print("\nBranch with highest total transactions:", branch_with_max, "(index", idx_max, ")")
+
+# 4) Average monthly transaction volume across all branches
+avg_monthly_all = transactions.mean()
+print("\nAverage monthly transaction volume across all branches:", avg_monthly_all)
+
+# 5) Reshape the array to a 3x8 format and explain implications
+reshaped = transactions.reshape((3, 8))
+print("\nReshaped (3x8):\n", reshaped)
