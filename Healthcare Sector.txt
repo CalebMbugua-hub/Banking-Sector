@@ -1,0 +1,28 @@
+# 1) Create a tuple for a patient: (Name, Age, Blood Pressure, Heart Rate)
+patient = ("Alice Kimani", 34, "120/80", 72)
+print("Patient tuple:", patient)
+
+# 2) Access and print the patient's age and heart rate
+age = patient[1]
+heart_rate = patient[3]
+print("\nAge:", age)
+print("Heart rate:", heart_rate)
+
+# 3) Explanation (see below for text)
+
+# 4) Convert the tuple to a list, update the heart rate, and convert back to tuple
+patient_list = list(patient)
+patient_list[3] = 78        # updated heart rate
+patient_updated = tuple(patient_list)
+print("\nUpdated patient tuple:", patient_updated)
+
+# 5) Create a tuple of 5 patients and extract all names
+patients = (
+    ("Alice Kimani", 34, "120/80", 72),
+    ("Brian Otieno", 56, "130/85", 80),
+    ("Chloe Mwende", 28, "110/70", 68),
+    ("David Njoroge", 45, "125/82", 75),
+    ("Evelyn Wainaina", 63, "140/90", 85)
+)
+names = tuple(p[0] for p in patients)   # or [p[0] for p in patients]
+print("\nPatient names:", names)
